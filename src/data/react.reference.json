@@ -1,0 +1,82 @@
+{
+	"package": "react@16.2.0",
+	"name": "React",
+	"datatype": "function",
+	"_datatype_comment": "Found with typeof Component",
+	"code": "import React from 'react';",
+	"note": "React is the entry point to the React library. If you load React from a &lt;script&gt; tag, these top-level APIs are available on the React global. If you use <a href=\"http://es6-features.org/\">ES6</a> with npm, you can write <code>import React from 'react'</code>. If you use ES5 with npm, you can write <code>var React = require('react')</code>.",
+	"parameters": [
+		{
+			"name": "none"
+		}
+	],
+	"methods": [
+		{
+			"name": "createFactory",
+			"statement": "createFactory(type)",
+			"description": "Return a function that produces React elements of a given type. Like <code>React.createElement()</code>, the type argument can be either a tag name string (such as <code>'div'</code> or <code>'span'</code>), a React component type (a class or a function), or a React fragment type. This helper is considered legacy, and we encourage you to either use JSX or use <code>React.createElement()</code> directly instead. You will not typically invoke <code>React.createFactory()</code> directly if you are using JSX.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "type",
+					"description": "The type argument is either a string (HTML tag) or a class. It’s a description of what tag/class is going to be rendered and what props it will contain. You can also create factory functions for specific types.",
+					"code_example": "var div = React.createFactory('div');var reactDivElement = div(props, children);"
+				}
+			]
+		},
+		{
+			"name": "createElement",
+			"statement": "createElement(component, props, ...children)",
+			"code_example": "// the DOM-Elementconst element = <div class=\"hi\" id=\"greet\">Hello world!</div>;// is created withconst element = React.createElement(\"div\", { \"class\": \"hi\", id: \"greet\" }, \"Hello world!\");",
+			"description": "Create and return a new React element of the given type. The type argument can be either a tag name string (such as <code>'div'</code> or <code>'span'</code>), a React component type (a class or a function), or a React fragment type.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "type",
+					"description": "Type of DOM which is used in the tag"
+				},
+				{
+					"name": "props",
+					"description": "Attributes of the DOM-Element"
+				},
+				{
+					"name": "children",
+					"description": "Content between the Start- ans Closing-Tag"
+				}
+			],
+			"note": "Code written with JSX will be converted to use <code>React.createElement()</code>. You will not typically invoke <code>React.createElement()</code> directly if you are using JSX. For examples see <a href=\"https://babeljs.io/repl/#?presets=react&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA\">JSX-to-JavaScript-Converter</a>."
+		},
+		{
+			"name": "cloneElement",
+			"statement": "React.cloneElement( element, [props], [...children] )",
+			"description": "Clone and return a new React element using element as the starting point. The resulting element will have the original element’s props with the new props merged in shallowly. New children will replace existing children. <code>key</code> and <code>ref</code> from the original element will be preserved.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "element",
+					"description": "String of the DOM-Element which is cloned"
+				},
+				{
+					"name": "props",
+					"description": "Properties of the cloned DOM-Element"
+				},
+				{
+					"name": "children",
+					"description": "Children/Content between the Start- and End-Tag of the cloned Element."
+				}
+			]
+		},
+		{
+			"name": "isValidElement",
+			"statement": "isValidElement(object)",
+			"description": "Verifies the object is a React element. Returns <code>true</code> or <code>false</code>.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "object",
+					"description": "Element which is verified."
+				}
+			]
+		}
+	]
+}
