@@ -1,0 +1,288 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://github.com/matthiaw/js-ref/blob/master/src/data/reference.schema.json",
+  "type": "object",
+  "properties": {
+    "package": {
+      "$id": "/properties/package",
+      "type": "string",
+      "title": "The Package-Name of the JavaScript-Element.",
+      "description": "The package explains which JavaScript-Library contains the described element. This should be always correspond to the npm-repository with library-name and version, like package@version.",
+      "default": "",
+      "examples": [
+        "react@16.2.0"
+      ]
+    },
+    "name": {
+      "$id": "/properties/name",
+      "type": "string",
+      "title": "The Name of the Element.",
+      "description": "The name which defines the element.",
+      "default": "",
+      "examples": [
+        "Children"
+      ]
+    },
+    "_name_comment": {
+      "$id": "/properties/_name_comment",
+      "type": "string",
+      "title": "Comment for the name of the component.",
+      "description": "Explanation to the name of the component. Is used as tooltip.",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "description": {
+      "$id": "/properties/description",
+      "type": "string",
+      "title": "Text which describes the usage of the JavaScript Element.",
+      "description": "In human readable sentences, the usage of the element should be described. Html-Code could be used.",
+      "default": "",
+      "examples": [
+        "<code>React.Children</code> provides utilities for dealing with the <code>this.props.children</code> opaque data structure."
+      ]
+    },
+    "datatype": {
+      "$id": "/properties/datatype",
+      "type": "string",
+      "title": "Datatype of the element",
+      "description": "Datatype of the element. Could be Condition, Function, Class, Object, ...",
+      "default": "",
+      "examples": [
+        "function"
+      ]
+    },
+    "_datatype_comment": {
+      "$id": "/properties/_datatype_comment",
+      "type": "string",
+      "title": "Comment to the datatype.",
+      "description": "Comment of the datatype. Is used as tooltip over the datatype.",
+      "default": "",
+      "examples": [
+        "Found with typeof Component"
+      ]
+    },
+    "childof": {
+      "$id": "/properties/childof",
+      "type": "string",
+      "title": "Name of the parent",
+      "description": "Parent-Element of the named element. Could be empty.",
+      "default": "",
+      "examples": [
+        "React"
+      ]
+    },
+    "_childof_comment": {
+      "$id": "/properties/_childof_comment",
+      "type": "string",
+      "title": "Comment to the parent",
+      "description": "Comment to the parent. Used as tooltip.",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "code": {
+      "$id": "/properties/code",
+      "type": "string",
+      "title": "Code Statement as example for the element",
+      "description": "Code which exlains the usage of the element.",
+      "default": "",
+      "examples": [
+        "React.Children.map(children, function[(thisArg)])"
+      ]
+    },
+    "note": {
+      "$id": "/properties/note",
+      "type": "string",
+      "title": "Note to the element",
+      "description": "Explains rules, principals and necessary notes which should be recognized by using the element.",
+      "default": "",
+      "examples": [
+        "-"
+      ]
+    },
+    "parameters": {
+      "$id": "/properties/parameters",
+      "type": "array",
+      "items": {
+        "$id": "/properties/parameters/items",
+        "type": "object",
+        "properties": {
+          "name": {
+            "$id": "/properties/parameters/items/properties/name",
+            "type": "string",
+            "title": "Property-Name of the Element",
+            "description": "Properties are variables, boolean flags or default values. Functional element should be declared under method section.",
+            "default": "",
+            "examples": [
+              "none"
+            ]
+          },
+          "description": {
+            "$id": "/properties/parameters/items/properties/description",
+            "type": "string",
+            "title": "Description of the Property",
+            "description": "Description of the property, which explains the purpose of the property.",
+            "default": "",
+            "examples": [
+              ""
+            ]
+          },
+          "note": {
+            "$id": "/properties/parameters/items/properties/note",
+            "type": "string",
+            "title": "Note for the property",
+            "description": "Rule or principle which is important to use the property.",
+            "default": "",
+            "examples": [
+              ""
+            ]
+          },
+          "code_example": {
+            "$id": "/properties/parameters/items/properties/code_example",
+            "type": "string",
+            "title": "Code example for the usage of the property",
+            "description": "A code snippet which explains the usage of the property.",
+            "default": "",
+            "examples": [
+              "var hi = \"Hello World!\n42 is still meaningfull.\""
+            ]
+          }
+        }
+      }
+    },
+    "methods": {
+      "$id": "/properties/methods",
+      "type": "array",
+      "items": {
+        "$id": "/properties/methods/items",
+        "type": "object",
+        "properties": {
+          "name": {
+            "$id": "/properties/methods/items/properties/name",
+            "type": "string",
+            "title": "Name of the method",
+            "description": "Name which calls the method.",
+            "default": "",
+            "examples": [
+              "map"
+            ]
+          },
+          "statement": {
+            "$id": "/properties/methods/items/properties/statement",
+            "type": "string",
+            "title": "Code statement of the method",
+            "description": "Code-line which shows what calls the methods (including all parameters)",
+            "default": "",
+            "examples": [
+              "map(children, function[(thisArg)])"
+            ]
+          },
+          "code_example": {
+            "$id": "/properties/methods/items/properties/code_example",
+            "type": "string",
+            "title": "Code example of the method",
+            "description": "Code-Example of the method",
+            "default": "",
+            "examples": [
+              ""
+            ]
+          },
+          "description": {
+            "$id": "/properties/methods/items/properties/description",
+            "type": "string",
+            "title": "Description of the method.",
+            "description": "Text which eplains the reason for the method.",
+            "default": "",
+            "examples": [
+              "Invokes a function on every immediate child contained within <code>children</code> with this set to <code>thisArg</code>. If <code>children</code> is a keyed fragment or array it will be traversed: the function will never be passed the container objects. If children is <code>null</code> or <code>undefined</code>, returns <code>null</code> or <code>undefined</code> rather than an array."
+            ]
+          },
+          "status": {
+            "$id": "/properties/methods/items/properties/status",
+            "type": "string",
+            "title": "Status of the method.",
+            "description": "Because JavaScript is not Java there is no type-safe validator which methods are needed, like a class-constructor or a mandatory method. For that the status can be required or optional.",
+            "default": "optional",
+            "examples": [
+              "optional"
+            ]
+          },
+          "returns": {
+            "$id": "/properties/methods/items/properties/returns",
+            "type": "string",
+            "title": "Return value of the method.",
+            "description": "Object, function, class or value which is returned by the method.",
+            "default": "",
+            "examples": [
+              "[elements]"
+            ]
+          },
+          "returns_description": {
+            "$id": "/properties/methods/items/properties/returns_description",
+            "type": "string",
+            "title": "Description of the return statement.",
+            "description": "Text which describes what with which purpose the method returns.",
+            "default": "",
+            "examples": [
+              "Array of elements"
+            ]
+          },
+          "parameters": {
+            "$id": "/properties/methods/items/properties/parameters",
+            "type": "array",
+            "items": {
+              "$id": "/properties/methods/items/properties/parameters/items",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "$id": "/properties/methods/items/properties/parameters/items/properties/name",
+                  "type": "string",
+                  "title": "Property of the method",
+                  "description": "Name of the property which should be set in the method header.",
+                  "default": "",
+                  "examples": [
+                    "children"
+                  ]
+                },
+                "description": {
+                  "$id": "/properties/methods/items/properties/parameters/items/properties/description",
+                  "type": "string",
+                  "title": "The Description Schema.",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "Children which should be invoked with the given function"
+                  ]
+                },
+                "note": {
+                  "$id": "/properties/methods/items/properties/parameters/items/properties/note",
+                  "type": "string",
+                  "title": "Note of the property",
+                  "description": "Note or Principal which describes what is importend when the property is set to the method.",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ]
+                },
+                "code_example": {
+                  "$id": "/properties/methods/items/properties/parameters/items/properties/code_example",
+                  "type": "string",
+                  "title": "Code Example of the property.",
+                  "description": "Detailed code example which describes the usage of the property.",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

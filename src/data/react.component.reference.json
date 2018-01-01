@@ -1,0 +1,177 @@
+{
+	"package": "react@16.2.0",
+	"name": "Component",
+	"datatype": "function",
+	"_datatype_comment": "Found with typeof Component",
+	"childof": "React",
+	"_childof_comment": "Found with Object.getPrototypeOf( this.constructor ).name",
+	"code": "//import withimport React, { Component } from 'react';",
+	"note": "Always start the name of a Component with a capital letter",
+	"parameters": [
+		{
+			"name": "defaultProps",
+			"description": "<code>defaultProps</code> can be defined as a property on the component class itself, to set the default props for the class. This is used for undefined props, but not for null props. ",
+			"code_example": "//Define Componentclass CustomButton extends React.Component {  // ...}CustomButton.defaultProps = {  color: 'blue'};//If props.color is not provided, it will be set by default to 'blue':  render() {    return <CustomButton /> ; // props.color will be set to blue  }//If props.color is set to null, it will remain null:  render() {    return <CustomButton color={null} /> ; // props.color will remain null  }"
+		},
+		{
+			"name": "displayName",
+			"description": "The <code>displayName</code> string is used in debugging messages. Usually, you don’t need to set it explicitly because it’s inferred from the name of the function or class that defines the component."
+		},
+		{
+			"name": "props",
+			"description": "<code>this.props</code> contains the props that were defined by the caller of this component. See Components and Props for an introduction to props. In particular, <code>this.props.children</code> is a special prop, typically defined by the child tags in the JSX expression rather than in the tag itself."
+		},
+		{
+			"name": "state",
+			"description": "The state contains data specific to this component that may change over time. The state is user-defined, and it should be a plain JavaScript object. If you don’t use it in <code>render()</code>, it shouldn’t be in the state. For example, you can put timer IDs directly on the instance. See State and Lifecycle for more information about the state. Never mutate <code>this.state</code> directly, as calling <code>setState()</code> afterwards may replace the mutation you made. Treat <code>this.state</code> as if it were immutable."
+		}
+	],
+	"methods": [
+		{
+			"name": "componentWillMount",
+			"statement": "componentWillMount()",
+			"description": "<code>componentWillMount()</code> is invoked immediately before mounting occurs. It is called before <code>render()</code>, therefore calling <code>setState()</code> synchronously in this method will not trigger an extra rendering. Generally, we recommend using the <code>constructor()</code> instead. Avoid introducing any side-effects or subscriptions in this method. For those use cases, use <code>componentDidMount()</code> instead. This is the only lifecycle hook called on server rendering.",
+			"status": "optional"
+		},
+		{
+			"name": "componentDidMount",
+			"statement": "componentDidMount()",
+			"description": "<code>componentDidMount()</code> is invoked immediately after a component is mounted. Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the network request. This method is a good place to set up any subscriptions. If you do that, don’t forget to unsubscribe in <code>componentWillUnmount()</code>. Calling <code>setState()</code> in this method will trigger an extra rendering, but it will happen before the browser updates the screen. This guarantees that even though the <code>render()</code> will be called twice in this case, the user won’t see the intermediate state. Use this pattern with caution because it often causes performance issues. It can, however, be necessary for cases like modals and tooltips when you need to measure a DOM node before rendering something that depends on its size or position.",
+			"status": "optional"
+		},
+		{
+			"name": "render",
+			"statement": "render()",
+			"description": "When called, it should examine <code>this.props</code> and <code>this.state</code> and return one of the following types<li>- <i>React elements</i>: Typically created via JSX. An element can either be a representation of a native DOM component like <code>div</code> or a user-defined composite component <code>MyComponent</code>.</li><li>- <i>String and numbers</i>: These are rendered as text nodes in the DOM</li><li>- <i>Portals</i>: Created with <code>ReactDOM.createPortal</code>.</li><li>- <i><code>null</code></i>: Renders nothing</li><li>- <i>Booleans</i>: Render nothing. Mostly used in combination <code>return render && &lt;OwnComponent&gt;</code>, where render is boolean.</li><br/>When returning <code>null</code> or <code>false</code>, <code>ReactDOM.findDOMNode(this)</code> will return <code>null</code>.<br/><br/>The <code>render()</code> function should be pure, meaning that it does not modify component state, it returns the same result each time it’s invoked, and it does not directly interact with the browser. If you need to interact with the browser, perform your work in <code>componentDidMount()</code> or the other lifecycle methods instead. Keeping <code>render()</code> pure makes components easier to think about.",
+			"status": "required",
+			"note": "<code>render()</code> will not be invoked if <code>shouldComponentUpdate()</code> returns <code>false</code>."
+		},
+		{
+			"name": "constructor",
+			"statement": "constructor(props)",
+			"code_example": "constructor(props) {  super(props);  this.state = {    color: props.initialColor  };}",
+			"description": "The constructor for a React component is called before it is mounted. When implementing the constructor for a <code>React.Component</code> subclass, you should call <code>super(props)</code> before any other statement. Otherwise, <code>this.props</code> will be undefined in the constructor, which can lead to bugs. Avoid introducing any side-effects or subscriptions in the constructor. For those use cases, use <code>componentDidMount()</code> instead. The constructor is the right place to initialize state. To do so, just assign an object to <code>this.state</code>; don’t try to call <code>setState()</code> from the constructor. The constructor is also often used to bind event handlers to the class instance. If you don’t initialize state and you don’t bind methods, you don’t need to implement a constructor for your React component. In rare cases, it’s okay to initialize state based on props. This effectively “forks” the props and sets the state with the initial props.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "props",
+					"description": "The parameter <cod>props</code> is used globally in the Component, and automatically set if constructor is not overwritten.",
+					"note": "<li>- If constructor is used <code>super(props)</code> must be the first argument inside the costructor. It must be set to use <code>this.props</code>.</li><li>- In general, you should initialize <code>state</code> in the constructor, and then call <code>setState</code> when you want to change it</li>"
+				}
+			]
+		},
+		{
+			"name": "componentDidMount",
+			"statement": "componentDidMount()",
+			"description": "<code>componentDidMount()</code> is invoked immediately after a component is mounted. Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the network request. This method is a good place to set up any subscriptions. If you do that, don’t forget to unsubscribe in <code>componentWillUnmount()</code>. Calling <code>setState()</code> in this method will trigger an extra rendering, but it will happen before the browser updates the screen. This guarantees that even though the <code>render()</code> will be called twice in this case, the user won’t see the intermediate state. Use this pattern with caution because it often causes performance issues. It can, however, be necessary for cases like modals and tooltips when you need to measure a DOM node before rendering something that depends on its size or position.",
+			"status": "optional"
+		},
+		{
+			"name": "componentWillReceiveProps",
+			"statement": "componentWillReceiveProps(nextProps)",
+			"description": "<code>componentWillReceiveProps()</code> is invoked before a mounted component receives new props. If you need to update the state in response to prop changes (for example, to reset it), you may compare <code>this.props</code> and <code>nextProps</code> and perform state transitions using <code>this.setState()</code> in this method. Note that React may call this method even if the props have not changed, so make sure to compare the current and next values if you only want to handle changes. This may occur when the parent component causes your component to re-render. React doesn’t call <code>componentWillReceiveProps()</code> with initial props during mounting. It only calls this method if some of component’s props may update. Calling <code>this.setState()</code> generally doesn’t trigger <code>componentWillReceiveProps()</code>.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "nextProps",
+					"description": "Properties which will be set to this component."
+				}
+			]
+		},
+		{
+			"name": "shouldComponentUpdate",
+			"statement": "shouldComponentUpdate(nextProps, nextState)",
+			"description": "Use <code>shouldComponentUpdate()</code> to let React know if a component’s output is not affected by the current change in state or props. The default behavior is to re-render on every state change, and in the vast majority of cases you should rely on the default behavior. <code>shouldComponentUpdate()</code> is invoked before rendering when new props or state are being received. Defaults to <code>true</code>. This method is not called for the initial render or when <code>forceUpdate()</code> is used. Returning false does not prevent child components from re-rendering when their state changes. Currently, if <code>shouldComponentUpdate()</code> returns false, then <code>componentWillUpdate()</code>, <code>render()</code>, and <code>componentDidUpdate()</code> will not be invoked. Note that in the future React may treat <code>shouldComponentUpdate()</code> as a hint rather than a strict directive, and returning <code>false</code> may still result in a re-rendering of the component. If you determine a specific component is slow after profiling, you may change it to inherit from <code>React.PureComponent</code> which implements <code>shouldComponentUpdate()</code> with a shallow prop and state comparison. If you are confident you want to write it by hand, you may compare <code>this.props</code> with <code>nextProps</code> and this.state with <code>nextState</code> and return <code>false</code> to tell React the update can be skipped.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "nextProps",
+					"description": "Properties which will be set next to this component."
+				},
+				{
+					"name": "nextState",
+					"description": "States which will be set next to this component."
+				}
+			],
+			"note": "Not do deep equality checks or using <code>JSON.stringify()</code> in <code>shouldComponentUpdate()</code>. It is very inefficient and will harm performance."
+		},
+		{
+			"name": "componentWillUpdate",
+			"statement": "componentWillUpdate(nextProps, nextState)",
+			"description": "<code>componentWillUpdate()</code> is invoked immediately before rendering when new props or state are being received. Use this as an opportunity to perform preparation before an update occurs. This method is not called for the initial render. Note that you cannot call <code>this.setState()</code> here; nor should you do anything else (e.g. dispatch a Redux action) that would trigger an update to a React component before <code>componentWillUpdate()</code> returns. If you need to update <code>state</code> in response to <code>props</code> changes, use <code>componentWillReceiveProps()</code> instead.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "nextProps",
+					"description": "Properties which will be set next to this component."
+				},
+				{
+					"name": "nextState",
+					"description": "States which will be set next to this component."
+				}
+			],
+			"note": "<code>componentWillUpdate()</code> will not be invoked if <code>shouldComponentUpdate()</code> returns false."
+		},
+		{
+			"name": "componentDidUpdate",
+			"statement": "componentDidUpdate(prevProps, prevState)",
+			"description": "<code>componentDidUpdate()</code> is invoked immediately after updating occurs. This method is not called for the initial render. Use this as an opportunity to operate on the DOM when the component has been updated. This is also a good place to do network requests as long as you compare the current props to previous props (e.g. a network request may not be necessary if the props have not changed).",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "prevProps",
+					"description": "Properties which where set to this component."
+				},
+				{
+					"name": "prevState",
+					"description": "States which where set to this component."
+				}
+			],
+			"note": "<code>componentDidUpdate()</code> will not be invoked if <code>shouldComponentUpdate()</code> returns false."
+		},
+		{
+			"name": "componentWillUnmount",
+			"statement": "componentWillUnmount()",
+			"description": "<code>componentWillUnmount()</code> is invoked immediately before a component is unmounted and destroyed. Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in <code>componentDidMount()</code>.",
+			"status": "optional"
+		},
+		{
+			"name": "componentDidCatch",
+			"statement": "componentDidCatch(error, info)",
+			"code_example": "//Set ErrorBoundary inside JavaScriptclass ErrorBoundary extends React.Component {  constructor(props) {    super(props);    this.state = { hasError: false };  }  componentDidCatch(error, info) {    // Display fallback UI    this.setState({ hasError: true });    // You can also log the error to an error reporting service    logErrorToMyService(error, info);  }  render() {    if (this.state.hasError) {      // You can render any custom fallback UI      return <h1>Something went wrong.</h1>;    }    return this.props.children;  }}//Use inside Html regular component<ErrorBoundary>  <MyWidget /></ErrorBoundary>",
+			"description": "Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them. A class component becomes an error boundary if it defines this lifecycle method. Calling <code>setState()</code> in it lets you capture an unhandled JavaScript error in the below tree and display a fallback UI. Only use error boundaries for recovering from unexpected exceptions; don’t try to use them for control flow.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "error",
+					"description": "Error Message"
+				},
+				{
+					"name": "info",
+					"description": "Information Message to Error"
+				}
+			],
+			"note": "Error boundaries only catch errors in the components <b>below</b> them in the tree. An error boundary can’t catch an error within itself.If an error boundary fails trying to render the error message, the error will propagate to the closest error boundary above it. This, too, is similar to how <code>catch {}</code> block works in JavaScript."
+		},
+		{
+			"name": "setState",
+			"statement": "setState( updater[, callback] )",
+			"description": "<code>setState()</code> enqueues changes to the component state and tells React that this component and its children need to be re-rendered with the updated state. This is the primary method you use to update the user interface in response to event handlers and server responses. Think of <code>setState()</code> as a request rather than an immediate command to update the component. For better perceived performance, React may delay it, and then update several components in a single pass. React does not guarantee that the state changes are applied immediately. <code>setState()</code> does not always immediately update the component. It may batch or defer the update until later. This makes reading <code>this.state</code> right after calling <code>setState()</code> a potential pitfall. Instead, use <code>componentDidUpdate</code> or a <code>setState</code> callback (<code>setState(updater, callback)</code>), either of which are guaranteed to fire after the update has been applied. If you need to set the state based on the previous state, read about the <code>updater</code> argument below. setState() will always lead to a re-render unless <code>shouldComponentUpdate()</code> returns <code>false</code>. If mutable objects are being used and conditional rendering logic cannot be implemented in <code>shouldComponentUpdate()</code>, calling <code>setState()</code> only when the new state differs from the previous state will avoid unnecessary re-renders. The first argument is an updater function with the signature <code>(prevState, props) => stateChange</code>. <code>prevState</code> is a reference to the previous state. It should not be directly mutated. Instead, changes should be represented by building a new object based on the input from <code>prevState</code> and <code>props</code>.",
+			"status": "optional",
+			"note": "For more information see <a href=\"https://reactjs.org/docs/state-and-lifecycle.html\">State and Lifecycle Guide for React</a>."
+		},
+		{
+			"name": "forceUpdate",
+			"statement": "forceUpdate(callback)",
+			"description": "By default, when your component’s state or props change, your component will re-render. If your <code>render()</code> method depends on some other data, you can tell React that the component needs re-rendering by calling <code>forceUpdate()</code>. Calling <code>forceUpdate()</code> will cause <code>render()</code> to be called on the component, skipping <code>shouldComponentUpdate()</code>. This will trigger the normal lifecycle methods for child components, including the <code>shouldComponentUpdate()</code> method of each child. React will still only update the DOM if the markup changes. Normally you should try to avoid all uses of <code>forceUpdate()</code> and only read from <code>this.props</code> and <code>this.state</code> in <code>render()</code>.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "callback",
+					"description": "Callback function of forced update",
+					"code_example": "this.forceUpdate(() => {  console.log('Component has updated');  });"
+				}
+			]
+		}
+	]
+}

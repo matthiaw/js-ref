@@ -1,0 +1,90 @@
+{
+	"package": "react@16.2.0",
+	"name": "Children",
+	"description": "<code>React.Children</code> provides utilities for dealing with the <code>this.props.children</code> opaque data structure.",
+	"datatype": "function",
+	"_datatype_comment": "Found with typeof Component",
+	"childof": "React",
+	"code": "React.Children.map(children, function[(thisArg)])",
+	"parameters": [
+		{
+			"name": "none"
+		}
+	],
+	"methods": [
+		{
+			"name": "map",
+			"statement": "map(children, function[(thisArg)])",
+			"description": "Invokes a function on every immediate child contained within <code>children</code> with this set to <code>thisArg</code>. If <code>children</code> is a keyed fragment or array it will be traversed: the function will never be passed the container objects. If children is <code>null</code> or <code>undefined</code>, returns <code>null</code> or <code>undefined</code> rather than an array.",
+			"status": "optional",
+			"returns": "[elements]",
+			"returns_description": "Array of elements",
+			"parameters": [
+				{
+					"name": "children",
+					"description": "Children which should be invoked with the given function"
+				},
+				{
+					"name": "function",
+					"description": "Function which should be invoked for the given elements"
+				}
+			]
+		},
+		{
+			"name": "forEach",
+			"statement": "forEach(children, function[(thisArg)])",
+			"description": "Like <code>map()</code>, but not returns an array.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "children",
+					"description": "Children which should be invoked with the given function"
+				},
+				{
+					"name": "function",
+					"description": "Function which should be invoked for the given elements"
+				}
+			]
+		},
+		{
+			"name": "count",
+			"statement": "count(children)",
+			"description": "Returns the total number of components in <code>children</code>, equal to the number of times that a callback passed to <code>map</code> or <code>forEach</code> would be invoked.",
+			"status": "optional",
+			"returns": "number",
+			"returns_description": "Number of counted elements",
+			"parameters": [
+				{
+					"name": "children",
+					"description": "Array of children"
+				}
+			]
+		},
+		{
+			"name": "only",
+			"statement": "only(children)",
+			"description": "Verifies that <code>children</code> has only one child (a React element) and returns it. Otherwise this method throws an error.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "children",
+					"description": "Child elements"
+				}
+			],
+			"note": "<code>React.Children.only()</code> does not accept the return value of <code>React.Children.map()</code> because it is an array rather than a React element."
+		},
+		{
+			"name": "toArray",
+			"statement": "toArray(children)",
+			"description": "Returns the <code>children</code> opaque data structure as a flat array with keys assigned to each child. Useful if you want to manipulate collections of children in your render methods, especially if you want to reorder or slice <code>this.props.children</code> before passing it down.",
+			"status": "optional",
+			"parameters": [
+				{
+					"name": "children",
+					"description": "Child elements"
+				}
+			],
+			"note": "<code>React.Children.toArray()</code> changes keys to preserve the semantics of nested arrays when flattening lists of children. That is, <code>toArray</code> prefixes each key in the returned array so that each element’s key is scoped to the input array containing it."
+		}
+	]
+}

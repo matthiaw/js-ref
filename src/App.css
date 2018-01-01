@@ -1,0 +1,170 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.element,
+.parameters,
+.methods {
+  background-color: #F7FBFE;
+  padding: 10px;
+}
+
+body {
+  font-family: Helvetica, Arial, Sans-Serif;
+  line-height: 1.7em;
+  font-size: 90%;
+}
+
+.note {
+  background-color: rgba(255, 229, 100, 0.3);
+  border-left-color: #ffe564;
+  border-left-width: 9px;
+  border-left-style: solid;
+  padding: 0px 0px 0px 10px;
+  border-radius: 5px;
+}
+
+h4 {
+  background-color: #dee3e9;
+  border: 1px solid #d0d9e0;
+  margin: 0 0 6px -8px;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+pre {
+  font-size: 90%;
+}
+
+li {
+  list-style: none;
+}
+
+.code {
+  background-color: #282c34;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 0px solid;
+  width: auto;
+}
+
+.childof {
+  text-align: right;
+  font-size: large;
+}
+
+.datatype {
+  font-style: italic;
+  font-size: normal;
+  padding: 0px 10px;
+}
+
+.package {
+  color: black;
+}
+
+.name {
+  color: black;
+  font-weight: bold;
+  font-size: large;
+}
+
+.comment {
+  color: grey;
+  font-size: x-small;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+code {
+  background-color: rgba(255, 229, 100, 0.1);
+  font-size: large;
+  padding: 0px 2px;
+  border-radius: 2px;
+}
+
+.status-blue,
+.status-gray,
+.status-red {
+  margin: 0 0 0px;
+  overflow: hidden;
+  vertical-align: top;
+  font-size: x-small;
+  padding: 1px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.status-red {
+  color: red;
+  background-color: #f9dbdb;
+  border: 1px solid #e9b3b3;
+}
+
+.status-blue {
+  color: blue;
+  background-color: #d8ecf7;
+  border: 1px solid #afcde3;
+}
+
+.status-gray {
+  color: gray;
+  background-color: #e2e2e2;
+  border: 1px solid #bdbdbd;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 240px;
+  background-color: black;
+  font-size: small;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 5px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
