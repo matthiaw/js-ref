@@ -6,9 +6,12 @@
 	"_datatype_comment": "Found with typeof Component",
 	"childof": "React",
 	"code": "React.Children.map(children, function[(thisArg)])",
+	"note": ".",
 	"parameters": [
 		{
-			"name": "none"
+			"name": "none",
+			"description": ".",
+			"note": "."
 		}
 	],
 	"methods": [

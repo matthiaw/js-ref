@@ -7,7 +7,9 @@
 	"note": "React is the entry point to the React library. If you load React from a &lt;script&gt; tag, these top-level APIs are available on the React global. If you use <a href=\"http://es6-features.org/\">ES6</a> with npm, you can write <code>import React from 'react'</code>. If you use ES5 with npm, you can write <code>var React = require('react')</code>.",
 	"parameters": [
 		{
-			"name": "none"
+			"name": "none",
+			"description": ".",
+			"note": "."
 		}
 	],
 	"methods": [

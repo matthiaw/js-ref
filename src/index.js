@@ -8,7 +8,10 @@ import Element from './Element';
 import registerServiceWorker from './registerServiceWorker';
 
 //Import the Reference-Data from JSON
+//import element from './data/react.reference.json';
 import element from './data/react.component.reference.json';
+//import element from './data/react.children.reference.json';
+//import element from './data/react.if.reference.json';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

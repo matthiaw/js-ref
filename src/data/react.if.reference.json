@@ -1,26 +1,20 @@
 {
-    "package": "react@16.2.0",
-    "name": "If-Else",
-    "_name_comment": "",
-    "datatype": "conditional statement",
-    "_datatype_comment": "",
-    "childof": "React",
-    "_childof_comment": "",
-    "code": "{ (this.props.value) ? <p>Hello World!</p> : null }",
-    "note": "A conditional check with Standard-JavaScript If-Else-Clause inside React's JSX is not possible, because JSX is a shortended syntatic language. For more see <a href=\"https://react-cn.github.io/react/tips/if-else-in-JSX.html\">If-Else in JSX</a>.",
-    "parameters": [
-      {
-        "name": "none",
-        "description": ""
-      }
-    ],
-    "methods": [
-      {
-        "name": "If-Else",
-        "statement": "{condition ? 'true' : 'false'}",
-        "code_example": "",
-        "description": "",
-        "status": "optional"
-      }
-    ]
+	"package": "react@16.2.0",
+	"name": "If-Else",
+	"datatype": "conditional statement",
+	"childof": "React",
+	"code": "{ (this.props.value) ? <p>Hello World!</p> : null }",
+	"note": "A conditional check with Standard-JavaScript If-Else-Clause inside React's JSX is not possible, because JSX is a shortended syntatic language. For more see <a href=\"https://react-cn.github.io/react/tips/if-else-in-JSX.html\">If-Else in JSX</a>.",
+	"parameters": [
+		{
+			"name": "none"
+		}
+	],
+	"methods": [
+		{
+			"name": "If-Else",
+			"statement": "{condition ? 'true' : 'false'}",
+			"status": "optional"
+		}
+	]
 }
