@@ -10,7 +10,7 @@ Some working examples are placed at JSFiddle:
 
 The React-Version of this project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-This project uses yarn and the package html-react-parser, which can be installed with yarn add html-react-parser.
+This project uses yarn and the package ```html-react-parser```, which can be installed with ```yarn add html-react-parser```.
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
